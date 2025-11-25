@@ -1,8 +1,17 @@
 "use client";
-// import { RedirectType, redirect } from "next/navigation";
 
-export default function Home() {
-  // redirect("v1", RedirectType.replace); // this is the server way, but we need the same effect when statically exported...
+import dynamic from "next/dynamic";
 
-  location.replace("v1"); // Make the page a client component in order to use the Browser `location` API.
-}
+// Can't use @next/navigation redirect() in static exports
+// So instead we use Browser `location` API, but we have to prevent the page from pre-rendering
+
+// Client Component that does the redirect
+const RedirectComponent = () => {
+  location.replace("v1");
+  return null;
+};
+
+// export the Component dynamically, with SSR (pre-rendering) disabled, as the Page
+export default dynamic(() => Promise.resolve(RedirectComponent), {
+  ssr: false,
+});
