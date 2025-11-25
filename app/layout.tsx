@@ -29,7 +29,12 @@ const navbar = (
     // ... Your additional navbar options
   />
 );
-const footer = <Footer>ENTRUST</Footer>;
+const footer = (
+  <Footer>
+    <EntrustLogo />
+    <EuFundedLogo />
+  </Footer>
+);
 
 export default async function RootLayout({
   children,
