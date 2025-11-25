@@ -1,0 +1,57 @@
+@import 'tailwindcss';
+
+@import 'nextra-theme-docs/style.css';
+
+@variant dark (&:where(.dark *));
+
+/* ENTRUST Colors */
+
+@theme {
+  --color-entrust-orange: #ee7326;
+  --color-entrust-gray: #f2f2f2;
+  --color-entrust-blue: #204f90;
+  --color-entrust-black: #000000;
+}
+
+/* ENTRUST Typography */
+
+/* We're off by 1 compared to the style guide to incorporate "Title" above "Heading 1" */
+h1, h2, h3, h4 {
+  font-family: var(--font-roboto);
+}
+
+h1 {
+  font-weight: "bold";
+  font-size: 40px;
+  color: var(--color-entrust-orange);
+}
+
+h2 {
+  font-size: 32px;
+  color: var(--color-entrust-blue);
+  font-weight: normal;
+}
+
+h3 {
+  font-size: 27.2px;
+  color: var(--color-entrust-orange);
+  font-weight: 300;
+}
+
+h4 {
+  font-size: 20px;
+  color: var(--color-entrust-blue);
+  font-weight: 300;
+}
+
+h5 {
+  font-family: var(--font-plex-sans);
+  color: var(--color-gray-500);
+  font-size: 18px;
+  font-weight: normal;
+}
+
+body {
+  font-family: var(--font-plex-sans);
+  font-size: 16px;
+}
