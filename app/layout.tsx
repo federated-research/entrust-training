@@ -1,9 +1,21 @@
 import { Head } from "nextra/components";
 import { getPageMap } from "nextra/page-map";
 import { Footer, Layout, Navbar } from "nextra-theme-docs";
-import "nextra-theme-docs/style.css";
 import "@/styles/globals.css";
-import Logo from "@/components/Logo";
+import { IBM_Plex_Sans, Roboto } from "next/font/google";
+import { EntrustLogo, EuFundedLogo } from "@/components/Logos";
+
+// If loading a variable font, you don't need to specify the font weight
+const roboto = Roboto({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-roboto",
+});
+const plexSans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-plex-sans",
+});
 
 export const metadata = {
   // Define your metadata here
@@ -13,7 +25,7 @@ export const metadata = {
 // const banner = <Banner storageKey="some-key">Nextra 4.0 is released 🎉</Banner>;
 const navbar = (
   <Navbar
-    logo={<Logo />}
+    logo={<EntrustLogo />}
     // ... Your additional navbar options
   />
 );
@@ -32,6 +44,8 @@ export default async function RootLayout({
       dir="ltr"
       // Suggested by `next-themes` package https://github.com/pacocoursey/next-themes#with-app
       suppressHydrationWarning
+      //fonts
+      className={`${plexSans.variable} ${roboto.variable}`}
     >
       <Head
       // ... Your additional head options
@@ -46,6 +60,10 @@ export default async function RootLayout({
           docsRepositoryBase="https://github.com/federated-research/entrust-training/tree/main"
           footer={footer}
           // ... Your additional layout options
+          darkMode={false}
+          nextThemes={{
+            defaultTheme: "light",
+          }}
         >
           {children}
         </Layout>
