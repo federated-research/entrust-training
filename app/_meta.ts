@@ -4,8 +4,8 @@ export default {
     type: "page",
     display: "hidden",
   },
-  v1: {
-    title: "Version 1",
+  "d20.2": {
+    title: "1st Training Package",
     type: "page",
   },
 };

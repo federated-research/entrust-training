@@ -26,6 +26,15 @@ h1 {
   color: var(--color-entrust-orange);
 }
 
+small { /* Subtitle */
+  font-family: var(--font-roboto);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--color-entrust-orange);
+  font-weight: 300;
+  margin-top: .5em;
+}
+
 h2 {
   font-size: 32px;
   color: var(--color-entrust-blue);
