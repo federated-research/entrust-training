@@ -1,0 +1,35 @@
+import { Cards } from "nextra/components";
+import { DoorOpenIcon, DoorClosedLockedIcon } from "lucide-react";
+
+# Deploying the Five Safes TES Tools
+
+There are quite a few components that make up the Five Safes TES Tools, but there are some common things to consider when deploying the tools.
+
+Firstly, all the components except the TES Backend are available as OCI Container Images, and the deployment samples use Docker Compose.
+
+The TES Backend is the installer's choice, and is expected to be deployed separately, but network-available to the other Five Safes TES TRE Layer components.
+
+Finally, it is up to the installer how they distribute the installation of the components, though the guidance and samples here refer to separate environments for:
+
+- Submission
+- Each TRE's components except TES (Agent, Egress, Storage, Auth, etc.)
+- Each TRE's TES Backend
+
+## Requirements
+
+Given the above there are some requirements for deployment, which are covered in each deployment guide.
+
+## Deployment Guides
+
+<Cards>
+  <Cards.Card
+    icon={<DoorOpenIcon />}
+    title="Deploy Submission components"
+    href="deployment/submission"
+  />
+  <Cards.Card
+    icon={<DoorClosedLockedIcon />}
+    title="Deploy TRE components"
+    href="deployment/tre"
+  />
+</Cards>

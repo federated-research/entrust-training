@@ -1,0 +1,47 @@
+import { Cards } from "nextra/components";
+import { ChevronRightCircleIcon } from "lucide-react";
+
+# Five Safes TES Tools
+
+The Five Safes TES Tools are an open-source reference implementation of the [Five Safes TES Weave](https://docs.federated-analytics.ac.uk/five_safes_tes) for Federated Research.
+
+## Core Components Summary
+
+The Five Safes TES Documentation provides an overview of the Tools' [Core Components](https://docs.federated-analytics.ac.uk/five_safes_tes/quickstart/stackinfo), in the context of a demonstration deployment.
+
+To summarise:
+
+- A Federation of TREs would have a centralised Submission Service: the **Five Safes TES Submission Layer**
+  - It connects to a **KeyCloak** server to provide OIDC Authentication, similar to EOSC-ENTRUST AAAI
+  - It connects to a **MinIO** server to function as Artifact Storage
+- Each TRE in the Federation would have:
+  - A **Five Safes TES TRE Agent**
+  - A **Five Safes TES Egress Portal**
+  - A **GA4GH TES Backend**, such as [Funnel](https://ohsu-comp-bio.github.io/funnel/)
+  - A **MinIO** server to function as task storage between the above components
+  - A **KeyCloak** server to provide OIDC Authentication for all the above components
+
+<Cards.Card
+  className="mt-2"
+  icon={<ChevronRightCircleIcon />}
+  title="Learn about Deploying the Five Safes TES Tools"
+  href="five-safes-tes/deployment"
+/>
+
+## Project Setup
+
+<Cards.Card
+  className="mt-2"
+  icon={<ChevronRightCircleIcon />}
+  title="Explore the Project Setup Guide"
+  href="five-safes-tes/project-setup"
+/>
+
+## Workflow Processing
+
+<Cards.Card
+  className="mt-2"
+  icon={<ChevronRightCircleIcon />}
+  title="Learn how to Run Analyses"
+  href="five-safes-tes/run-analysis"
+/>
