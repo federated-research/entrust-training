@@ -7,7 +7,7 @@ import dynamic from "next/dynamic";
 
 // Client Component that does the redirect
 const RedirectComponent = () => {
-  location.replace("v1");
+  location.replace("d20.2");
   return null;
 };
 

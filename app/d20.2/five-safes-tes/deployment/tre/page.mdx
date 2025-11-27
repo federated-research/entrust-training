@@ -1,0 +1,40 @@
+# Deploying TRE Components
+
+Inside the TRE the following components are installed:
+
+- the **TRE Agent API** and **UI**
+- the **Egress API** and **UI**
+- a **TES Backend**
+- some supporting components, such as **KeyCloak** and **MinIO**
+
+It is straight forward to run most of the TRE components on a single Virtual Machine via Docker Compose.
+
+The main exception to this is the TES Backend, which is expected to be deployed separately, but network-available to the other Five Safes TES TRE Layer components.
+
+> [!TIP]
+>
+> Some of the components may be fulfilled by existing services, such as an existing KeyCloak or MinIO installation; these can be omitted from the Compose file used for deployment, and the environment settings changed to point at the existing services.
+
+## Requirements
+
+[Requirements for the TRE Components](https://docs.federated-analytics.ac.uk/tre_agent/requirements) deployment are provided in the Five Safes TES Documentation.
+
+The Five Safes TES Documentation guides and samples also deploy [Funnel](https://ohsu-comp-bio.github.io/funnel/) as a standalone TES Backend on its own VM of the same specification.
+
+## Deploy
+
+Deployment guides and samples are provided in the Five Safes TES Documentation:
+
+- [TRE Agent, Egress and supporting components](https://docs.federated-analytics.ac.uk/tre_agent/deploy)
+- [Funnel](https://docs.federated-analytics.ac.uk/five_safes_tes/TES/install_funnel) as a Five Safes TES Backend
+
+## Connecting components
+
+It is wise at the point of deployment to configure the components within a TRE to connect to each other.
+
+The Five Safes TES Documentation provides guidance on this.
+
+The main connection points are between:
+
+- the **TRE Agent** and **Egress** applications - as described in [this guide](https://docs.federated-analytics.ac.uk/tre_agent/guides/connecttoegress)
+- the **TES Backend** and **MinIO** - as described in [this guide](https://docs.federated-analytics.ac.uk/five_safes_tes/TES/install_funnel)

@@ -1,0 +1,58 @@
+import { Cards } from "nextra/components";
+import { ChevronRightCircleIcon } from "lucide-react";
+
+# Workflow Processing
+
+This document gives an overview of how Federated Workflow Processing in TREs is achieved in Five Safes TES, and provides guidance on running analysis using the Five Safes TES Tools.
+
+## Overview
+
+Five Safes TES runs sequential workflows defined as GA4GH TES Tasks, federating them to multiple TREs where they are executed.
+
+This [Sequence Diagram](https://mermaid.live/view#pako:eNqlVU2P2jAQ_SuWpZWKgBVfgZLDSohy6KHtaqGXios3mQQXYqe2Q0tX_PcdO4QkEFptGy7x5M2bTz9eaCBDoD7V8CMDEcAHzmLFkrVYC4IPC4xU5Ak0MBVsQBX20tJ9eGgvs-eEa82l8MkSREhWiyVJ2WEnWZjjS4TFfwxBGG4OPpllZmPfA2aAfNU2gIUXgC6iu1X2Ch7PRIHOdqYhRNVnLkXEVUJWTMVgyOppoa88WmjFYgPQmjAFzCef2BaqdRCGdXGRZoaEzDBSOvDnHVwR2sTLJmHiCE1NvTG5ExIh-Cr-fAPBlkTY_atmXmBtrDbafJyKyZRwDhfZnuAhGMZ3-iJw3lapuIbGYAXqUck9t9XVOAMFblrM8uY-d3d18pAbkipImXJjy0ElfauNzK6TIiYg9lxJkSBlZZkeT0P4yc0G6_oOgYGwKXQzE6ZyK8TsVIUU2BoBivCExaD_j831x-Wa2p6Fl7n-E_fJjnust-9069zqtyd5GkjxtTqP23x2o6tbJjOD66XdpjHHWNuut7HUL0N7EePN1haEqqQNyc91Ucpt5EsU8aAUproVuQqqWWpHAQVlHV-mdQPWvNGuwjLxpmu8xFThb71yl6Cmc5-l4dGB6LMJFzRJd2CgklFVblpVsXHadR1zJ2M87jEua5SsP3CUTvZHOzRWPKR-hNsMHZqASpg90xfLuqYo0gmsqY-vIUTMajRdiyP6pUx8kzKhvlEZeiqZxZszT5bixSn-gs4Q1ABQc5kJQ33PMVD_hf6i_mh8Px2Nxj3PG_RH0-n7SYcenHXcG05Gg_6w359MveGxQ3-7kL17PA0GnucNe0NvMhz3j6-etmCa)
+shows the happy path by which Workflow Processing occurs using Five Safes TES.
+
+It shows the actors involved, and the interactions between different components from the initialisation of analysis, through federation, execution (shown in a single TRE), and egress, up to the outputs being made available.
+
+## Guides
+
+The Five Safes TES Documentation has guides for submitting analysis workflows via the Submission Layer's TES API:
+
+### Get an Access Token
+
+This guide describes how to retrieve an access token for use with the API:
+
+<Cards.Card
+  className="mt-2"
+  icon={<ChevronRightCircleIcon />}
+  title="Get an Access Token"
+  href="https://docs.federated-analytics.ac.uk/submission/guides/get_token"
+/>
+
+### Analysis Quickstart
+
+The Analysis Quickstart guide simply runs a "Hello World" workflow, with one step:
+
+<Cards.Card
+  className="mt-2"
+  icon={<ChevronRightCircleIcon />}
+  title="Analysis Quickstart"
+  href="https://docs.federated-analytics.ac.uk/submission/tasks/quickstart"
+/>
+
+### Calculate a federated mean
+
+This end-to-end guide uses a sample researcher analysis script written in python.
+
+The script makes a Five Safes TES Submission to get the partial summary statistics for a mean calculation on an OMOP dataset.
+
+Once the summary statistics have been returned, the script then performs the aggregation process to calculate a mean across the federated datasets.
+
+It is expected that each Target TRE has an OMOP Dataset configured for the Project; the guide includes details on how to bootstrap a sample dataset.
+
+<Cards.Card
+  className="mt-2"
+  icon={<ChevronRightCircleIcon />}
+  title="Run an Analysis"
+  href="https://docs.federated-analytics.ac.uk/submission/tasks/run_analysis"
+/>

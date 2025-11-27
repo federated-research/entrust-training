@@ -1,0 +1,34 @@
+import { Cards } from "nextra/components";
+import { ChevronRightCircleIcon } from "lucide-react";
+
+# Analysis Types for TREs
+
+There are a number of factors which affect what analysis can be performed firstly within a TRE and secondly when federating that analysis.
+
+The [Federated Research Patterns](https://docs.federated-analytics.ac.uk/federated_research_patterns/patterns) as referred to in [Concepts & Standards](concepts) help with communication of these factors and their impact.
+
+Factors affecting Analytical Patterns include:
+
+- The type of analysis (typically determined by the algorithm(s) in use, not the desired statistics)
+- How that analysis will be initiated
+- What data movement is required to achieve the analysis
+- What data egress would occur
+
+Additonally, all of the above must be considered in the context of the approach to federation of analysis and the capability of the tools implementing that approach.
+
+TREs must find the above factors acceptable within their own governance frameworks and processes in order for analysis to be achievable.
+
+## An interactive illustration
+
+To help TREs understand the impact of their acceptance of these factors on what analysis may be achievable, we have developed the following resource:
+
+<Cards.Card
+  className="mt-4"
+  icon={<ChevronRightCircleIcon />}
+  title="Analysis Types for TREs"
+  href="https://health-informatics-uon.github.io/analysis-types-for-TREs/"
+/>
+
+The site contains a description of [Categories of Analysis methods](https://health-informatics-uon.github.io/analysis-types-for-TREs/Categorisation), and its approach to that categorisation (determined by the factors detailed above).
+
+It also provides an interactive resource that, using the categories, allows the user to [get achievable analyses by their acceptance requirements](https://health-informatics-uon.github.io/analysis-types-for-TREs/analysis-breakdown).

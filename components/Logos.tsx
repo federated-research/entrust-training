@@ -12,7 +12,7 @@ export function EuFundedLogo() {
   return (
     <Image
       src={EuFunded}
-      width={251}
+      width={300}
       height={65}
       alt="Funded by the European Union"
     />

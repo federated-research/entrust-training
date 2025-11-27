@@ -1,0 +1,105 @@
+import { Cards, Steps } from "nextra/components";
+import { ChevronRightCircleIcon } from "lucide-react";
+
+# Project Setup
+
+## Summary
+
+A number of steps are required to set up a Five Safes TES Project in the Federation
+
+1. A **Federation Administrator** adds a Project to the **Submission Layer**, along with Users and TREs who are members of the Project.
+   - These member TREs and Users are unconfirmed at this stage.
+1. A **TRE Administrator** for each TRE needs to connect their **TRE Agent** to the **Submission Layer**.
+   - Each connected TRE's **Agent** synchronises with the **Submission Layer**, pulling down its list of Member Projects and their Users.
+1. A **TRE Administrator**, for each TRE, uses the **Agent** to register their approval (or not) of each Project relevant to them, as well as each Project's individual User memberships.
+   - Only when a TRE has confirmed involvement in a Project will they receive submissions for that Project
+   - Only Users approved by a TRE for a Project will be allowed to make submissions for that Project to that TRE.
+   - TRE's may withdraw (or reinstate) individual User or Project approvals at any time.
+
+This guide in the Five Safes TES Documentation covers the end to end process:
+
+<Cards.Card
+  className="mt-2"
+  icon={<ChevronRightCircleIcon />}
+  title="Add a Project to the Submission Layer"
+  href="https://docs.federated-analytics.ac.uk/submission/guides/submissionManagerAddingNewProject"
+/>
+
+Additional guidance from the documentation is provided below, under each relevant step.
+
+<Steps>
+### Submission Project Setup
+
+Here, a **Federation Administrator** sets up the **Project** in the **Submission Layer**.
+
+> [!NOTE]
+>
+> If they need to create new users, these must be added to the correct realm in KeyCloak:
+>
+> <Cards.Card
+>   className="mt-2"
+>   icon={<ChevronRightCircleIcon />}
+>   title="Add a New User to KeyCloak"
+>   href="https://docs.federated-analytics.ac.uk/submission/guides/keycloakAdminAddingNewUser"
+> />
+
+The basic Project setup process is described in the following guide, including adding an initial TRE and User:
+
+<Cards.Card
+  className="mt-2"
+  icon={<ChevronRightCircleIcon />}
+  title="Five Safes TES Project Setup"
+  href="https://docs.federated-analytics.ac.uk/submission/guides/project_setup"
+/>
+
+There are also guides for adding additional Users to an existing Project:
+
+<Cards>
+  <Cards.Card
+    icon={<ChevronRightCircleIcon />}
+    title="Complete Process of Adding a Researcher"
+    href="https://docs.federated-analytics.ac.uk/submission/guides/addresearchertoplatform"
+  />
+  <Cards.Card
+    icon={<ChevronRightCircleIcon />}
+    title="Add a Person to the Submission Layer"
+    href="https://docs.federated-analytics.ac.uk/submission/guides/submissionManagerAddingNewPerson"
+  />
+  <Cards.Card
+    icon={<ChevronRightCircleIcon />}
+    title="Add a Person to a Project"
+    href="https://docs.federated-analytics.ac.uk/submission/guides/addresearchertoproject"
+  />
+</Cards>
+
+### TRE Agent Connection
+
+A **TRE Administrator** for each TRE needs to connect their **TRE Agent** to the **Submission Layer**.
+
+The following guide covers both the Submission Layer and TRE Agent sides of this process:
+
+<Cards.Card
+  className="mt-2"
+  icon={<ChevronRightCircleIcon />}
+  title="Connect a TRE Agent"
+  href="https://docs.federated-analytics.ac.uk/submission/guides/addtreagent#submission-layer-setup"
+/>
+
+It also covers how to add a TRE to an existing Project in the Submission Layer.
+
+> [!NOTE]
+>
+> Once connected, the TRE Agent will start to synchronise Project and User Memberships.
+
+### TRE Project and User Approval
+
+A **TRE Administrator**, for each TRE, uses the **Agent** to register their approval (or not) of each Project relevant to them, as well as each Project's individual User memberships.
+
+<Cards.Card
+  className="mt-2"
+  icon={<ChevronRightCircleIcon />}
+  title="Approving Project Access to the TRE"
+  href="https://docs.federated-analytics.ac.uk/tre_agent/guides/TREManagerApprovingProject"
+/>
+
+</Steps>
