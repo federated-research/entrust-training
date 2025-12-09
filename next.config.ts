@@ -8,7 +8,6 @@ const withNextra = nextra({
 
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: process.env.PAGES_BASE_PATH, // TODO: fix when custom domain mapping
   images: {
     unoptimized: true, // mandatory, otherwise won't export
   },
